@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    h1= title
+    p Start Your Shopping Experience Now
+    ul
+      each clothes, i in closet
+        li.list-group-item
+          a(href="/closet/"+post._id)= clothes.title
+    br
+    br
+    //- if user    
+    //-   h1 Add clothes
+    //-   form(method='POST', action='/closet')
+    //-     #form-group
+    //-       label Title:
+    //-       input.form-control(name='title', type='text')
+    //-     #form-group
+    //-       label Description:
+    //-       input.form-control(name='body', type='text')
+    //-     br
+    //-     input.btn.btn-outline-success(type='submit',value='Submit')

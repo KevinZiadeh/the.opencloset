@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  h1 Login
+  form(method='POST', action='/users/login')
+    #form-group
+      label Username or Email:
+      input.form-control(name='username',type='text')
+    #form-group
+      label Password:
+      input.form-control(name='password',type='password')
+    br
+    button.btn.btn-outline-success(type='submit',value='Submit', style='margin-right: 10px') Submit
+    a.btn.btn-primary(href='/users/login/facebook')
+      i.fab.fa-facebook-f 
+      span(style='margin-left: 5px') Continue via Facebook
+    br
+    a.btn.btn-link(href='/users/forgot') Forgot Password?
+    a.btn(href='/users/register') Don't have an account yet? Register Now
+    
+         
+
+      

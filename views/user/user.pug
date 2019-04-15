@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h1 Name :  #{user.name}
+  h4 Email : #{user.email}
+  if user.preferences
+    ul
+      li Type: #{user.preferences.type}
+      li Color: #{user.preferences.color}
+  else
+    h5 Help us help you by adding your preferences
+  a.btn.btn-primary(href='./edit/'+user._id) Edit
