@@ -1,0 +1,10 @@
+adjust the edit setting for user
+fix link to seller from profile page
+
+create seller
+create seller dashboard
+
+do the design
+
+create closet menu listing
+create closet searching and filtering
