@@ -1,5 +1,4 @@
 adjust the edit setting for user
-fix link to seller from profile page
 
 create seller
 create seller dashboard

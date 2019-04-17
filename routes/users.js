@@ -79,9 +79,9 @@ router.post('/register', [
  } else {
      var newUser = new User({
        name:name,
-       email:email.toLowerCase(),
-       username:username.toLowerCase(),
-       password:password,
+       email:email.toLowerCase().trim(),
+       username:username.toLowerCase().trim(),
+       password:password.trim(),
        seller_status: false,
        preferences: {},
        created_at: new Date().toDateString()
@@ -143,7 +143,8 @@ router.get('/logout', function(req, res){
 
 //User page
 router.get('/:id', ensureAuthenticated, function(req, res){
-  id = req.originalUrl.split('/')[2];
+  pth = req.originalUrl.split('/')
+  id = pth[pth.length-1];
   User.findById(id, (err, user) => {
     if (err){
       res.redirect('/')
@@ -155,10 +156,13 @@ router.get('/:id', ensureAuthenticated, function(req, res){
   })
 });
 
+
 // Edit information
 // GET request
 router.get('/edit/:id', ensureAuthenticated, function(req, res){
-  User.findById(req.user._id, (err, user) => {
+  pth = req.originalUrl.split('/')
+  id = pth[pth.length-1];
+  User.findById(id, (err, user) => {
     res.render('./user/edit_user', {
       title: 'Edit User',
       user: user
@@ -167,26 +171,99 @@ router.get('/edit/:id', ensureAuthenticated, function(req, res){
 });
 
 //POST request
-router.post('/edit/:id', ensureAuthenticated, (req, res) => {
+router.post('/edit/:id', ensureAuthenticated, [
+  body('password').not().isEmpty().withMessage('Password is required')
+], (req, res) => {
+  pth = req.originalUrl.split('/')
+  id = pth[pth.length-1];
   const name = req.body.name;
-  const email = req.body.email;
-  const username = req.body.username;
-  const location = req.body.location;
-  const oldpassword = req.body.oldpassword;
-  const newpassword = req.body.newpassword;
-  const newpassword2 = req.body.newpassword2;
+  const email = req.body.email.toLowerCase().trim();
+  const username = req.body.username.toLowerCase().trim();
+  // const location = req.body.location;
+  const password = req.body.password.trim();
 
-  req.checkBody('name','Name is required').notEmpty();
-  req.checkBody('email','Email is required').notEmpty();
-  req.checkBody('email','Email is not valid').isEmail();
-  req.checkBody('username','Username is required').notEmpty();
-  req.checkBody('location','Location is required').notEmpty();
-  req.checkBody('newpassword','Password is required').notEmpty();
-  req.checkBody('newpassword2','Passwords do not match').equals(req.body.newpassword);
-
+  // req.checkBody('password','Password is required').notEmpty();
 
   // Match Password
-  User.findById(req.user._id, (err, user) => {
+  User.findById(id, (err, user) => {
+    bcrypt.compare(password, user.password, function(err, isMatch){
+      if(err) throw err;
+      if(isMatch){
+        //Get Errors
+        let errors = req.validationErrors();
+
+          if(errors){
+            User.findById(id, (err, user) => {
+              if (err) {
+                console.log(err)
+              } else{
+                res.render('./user/edit_user', {
+                  title: 'Edit Information',
+                  user: user,
+                  errors:errors
+                });
+              }
+            })
+          } else {
+             let user = {};
+             user.name = name;
+             user.email = email.toLowerCase().trim();
+             user.username = username.toLowerCase().trim();
+             // user.location = location
+             updated_at = new Date()
+             let query = {_id: req.params.id}
+
+             User.update(query, user, (err, user) => {
+                 if(err){
+                   console.log(err);
+                   return
+                 } else{
+                   req.flash('success','User Updated');
+                   res.redirect('/');
+                 }
+               })
+             // })
+           }
+      } else {
+        req.flash('danger','Password is incorrect');
+        res.redirect('/users/edit/'+user.id);
+      }
+    })
+  })
+})
+
+// Edit Password
+router.get('/edit_password/:id', ensureAuthenticated, function(req, res){
+  pth = req.originalUrl.split('/')
+  id = pth[pth.length-1];
+  User.findById(id, (err, user) => {
+    res.render('./user/edit_password', {
+      title: 'Edit Password',
+      user: user
+    })
+  })
+});
+//Post request
+router.post('/edit_password/:id', ensureAuthenticated, [
+  body('newpassword').not().isEmpty().withMessage('New password is required'),
+  body('newpassword2').custom((value, { req }) => {
+  if (value !== req.body.newpassword) {
+    throw new Error('Passwords do not match');
+  }
+  return true
+})
+], (req, res) => {
+  pth = req.originalUrl.split('/')
+  id = pth[pth.length-1];
+  const oldpassword = req.body.oldpassword.trim();
+  const newpassword = req.body.newpassword.trim();
+  const newpassword2 = req.body.newpassword2.trim();
+
+  // req.checkBody('newpassword','Password is required').notEmpty();
+  // req.checkBody('newpassword2','Passwords do not match').equals(req.body.newpassword);
+
+  // Match Password
+  User.findById(id, (err, user) => {
     bcrypt.compare(oldpassword, user.password, function(err, isMatch){
       if(err) throw err;
       if(isMatch){
@@ -207,10 +284,6 @@ router.post('/edit/:id', ensureAuthenticated, (req, res) => {
             })
           } else {
              let user = {};
-             user.name = name;
-             user.email = email.toLowerCase();
-             user.username = username.toLowerCase();
-             user.location = location
              user.password = newpassword;
              updated_at = new Date()
                bcrypt.genSalt(10, function(err, salt){
@@ -227,7 +300,7 @@ router.post('/edit/:id', ensureAuthenticated, (req, res) => {
                      console.log(err);
                      return
                    } else{
-                     req.flash('success','User Updated');
+                     req.flash('success','Password Updated');
                      res.redirect('/');
                    }
                  })
@@ -236,12 +309,11 @@ router.post('/edit/:id', ensureAuthenticated, (req, res) => {
            }
       } else {
         req.flash('danger','Old password is incorrect');
-        res.redirect('/users/edit/'+user.id);
+        res.redirect('/users/edit_password/'+user.id);
       }
     })
   })
 })
-
 
 //forgot password
 router.get('/forgot', (req, res) => {
