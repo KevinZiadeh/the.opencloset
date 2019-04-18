@@ -17,7 +17,12 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-  //   //uniqueCaseInsensitive: true
+  },
+  location:{
+    type: String,
+  },
+  phone_number:{
+    type: Number,
   },
   password:{
     type: String,

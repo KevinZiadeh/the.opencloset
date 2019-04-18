@@ -19,6 +19,9 @@ html
             if !user.seller_status
               li.nav-item
                 a.nav-link(href='/seller') Become a Seller
+            else
+              li.nav-item
+                a.nav-link(href='/seller/dashboard') Dashboard
             li.nav-item
               a.nav-link(href='/users/'+user._id)
                 i.fas.fa-user-circle.fa-lg

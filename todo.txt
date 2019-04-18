@@ -1,4 +1,3 @@
-create seller
 create seller dashboard
 
 do the design
