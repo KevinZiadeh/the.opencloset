@@ -176,22 +176,23 @@ router.post('/edit/:id', ensureAuthenticated, [
 ], (req, res) => {
   pth = req.originalUrl.split('/')
   id = pth[pth.length-1];
-  const name = req.body.name;
-  const email = req.body.email.toLowerCase().trim();
-  const username = req.body.username.toLowerCase().trim();
-  // const location = req.body.location;
-  const password = req.body.password.trim();
-
-  // req.checkBody('password','Password is required').notEmpty();
+  // const password = req.body.password.trim();
+  // console.log(req.body);
 
   // Match Password
   User.findById(id, (err, user) => {
-    bcrypt.compare(password, user.password, function(err, isMatch){
+    bcrypt.compare(req.body.password.trim(), user.password, function(err, isMatch){
       if(err) throw err;
       if(isMatch){
         //Get Errors
         let errors = req.validationErrors();
-
+        const name = req.body.name;
+        const email = req.body.email.toLowerCase().trim();
+        const username = req.body.username.toLowerCase().trim();
+        const fav_color = (req.body.fav_color == 'Select your favorite color:' ? user.preferences.fav_color : req.body.fav_color)
+        const fav_type = (req.body.fav_type == 'Select your favorite type:' ? user.preferences.fav_type : req.body.fav_type)
+        const location = req.body.location;
+        console.log(user);
           if(errors){
             User.findById(id, (err, user) => {
               if (err) {
@@ -209,6 +210,10 @@ router.post('/edit/:id', ensureAuthenticated, [
              user.name = name;
              user.email = email.toLowerCase().trim();
              user.username = username.toLowerCase().trim();
+             user.preferences = {
+               fav_color: fav_color,
+               fav_type: fav_type
+             }
              // user.location = location
              updated_at = new Date()
              let query = {_id: req.params.id}

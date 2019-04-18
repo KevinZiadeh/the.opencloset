@@ -1,5 +1,3 @@
-adjust the edit setting for user
-
 create seller
 create seller dashboard
 
@@ -7,3 +5,9 @@ do the design
 
 create closet menu listing
 create closet searching and filtering
+
+do the money transaction
+
+do the recommendation
+
+do location help

@@ -14,6 +14,22 @@ block content
       label Username:
       input.form-control(name='username', type='text', value=user.username)
     #form-group
+      select.from-control(name='fav_color' type='select')
+        option(selected) Select your favorite color:
+        option Red
+        option Blue
+        option Yellow
+        option Black
+        option White
+        option Grey
+        option Green
+    #form-group
+      select.from-control(name='fav_type' type='select')
+        option(selected) Select your favorite type:
+        option Casual
+        option Formal
+        option Party
+    #form-group
       label Password:
       input.form-control(name='password', type='password')
     br
