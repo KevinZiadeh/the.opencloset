@@ -1,6 +1,9 @@
 create seller dashboard
 
-do the design
+do smooth scroll elements
+do main page image overlay
+do footer ----- follow us
+add contact us and about us pages
 
 create closet menu listing
 create closet searching and filtering

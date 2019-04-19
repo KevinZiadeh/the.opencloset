@@ -1,7 +1,7 @@
 @import "main/main.css";
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family:"Open Sans", arial, sans-serif;
   padding: 50px;
 }
 
@@ -28,4 +28,11 @@ a {
   font-size: 1.5rem !important;
   font-weight: 500;
   padding: 8px
+}
+
+footer{
+  font-family:"Open Sans", arial, sans-serif;
+  font-size: 13px;
+  overflow-wrap: break-word;
+  text-transform: uppercase;
 }

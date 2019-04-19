@@ -2,43 +2,45 @@ extends layout
 
 block content
   .row
-    .col-md-9(style={'padding': '0px'})
+    .col-md-8(style={'padding': '0px'})
       img.main_image(src='/images/main.png')
-    .col-md-3#overlay(style={'padding': '0px'})
-      .intro_text 
+    .col-md-4#overlay(style={'padding': '0px'})
+      .intro 
         p 
           | Lend 
           br
           | & Borrow
-        p.explanation Shopping has never been cheaper!
+        p.catchphrase Shopping has never been cheaper!
         #shoplink
           a(href='/closet') Shop now
   .row
     .col-md-5(style={'padding': '0px'})
       img.main_image(src='/images/why_lend.jpg')
     .col-md-7(style={'padding': '0px'})
-      .intro_text 
-        p Why Lend?
-      p.explanation 
-        | While we’re spending money excessively, who doesn’t want a 
-        | little more? Earn two times more by lending your pieces
-        | before you decide to resell them, and underwrite those 
-        |  by temporarily sharing it with people just like you. 
+      .wrapper
+        .intro_text 
+          p Why Lend?
+        p.explanation 
+          | While we’re spending money excessively, who doesn’t want a 
+          | little more? Earn two times more by lending your pieces
+          | before you decide to resell them, and underwrite those 
+          |  by temporarily sharing it with people just like you. 
   .row
     .col-md-7(style={'padding': '0px'})
-      .intro_text 
-        p Why Borrow?
-      p.explanation 
-      | Instead of going to your closet for something to wear on a Friday 
-      | night, you go to one of the many fast fashion stores instead, 
-      | because it’s cheaper and newer feels better. With the rise of fast
-      | fashion and compulsive consumerism, having a big appetite for 
-      | fashion comes at a cost — a trend we feel guilty buying into. The 
-      | Open Closet is here to help you deal with it. Trends are fun, but 
-      | not all of them are worthy of a purchase. We still believe fashion 
-      | is the ultimate power tool; the source for self-expression, 
-      | re-invention and discovery. Our mission is to provide a fashion
-      | portal that provides an alternative and conscious way to enjoy fashion. 
+      .wrapper
+        .intro_text 
+          p Why Borrow?
+        p.explanation 
+          | Instead of going to your closet for something to wear on a Friday 
+          | night, you go to one of the many fast fashion stores instead, 
+          | because it’s cheaper and newer feels better. With the rise of fast
+          | fashion and compulsive consumerism, having a big appetite for 
+          | fashion comes at a cost — a trend we feel guilty buying into. The 
+          | Open Closet is here to help you deal with it. Trends are fun, but 
+          | not all of them are worthy of a purchase. We still believe fashion 
+          | is the ultimate power tool; the source for self-expression, 
+          | re-invention and discovery. Our mission is to provide a fashion
+          | portal that provides an alternative and conscious way to enjoy fashion. 
     .col-md-5(style={'padding': '0px'})
       img.main_image(src='/images/why_borrow.jpg')
         

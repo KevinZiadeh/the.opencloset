@@ -8,20 +8,45 @@
   /* z-index: 0 */
 }
 
+.wrapper{
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 .intro_text{
   font-family: "Playfair Display", Georgia, serif;
   font-size: 51px;
-  margin: 25% auto auto auto;
+  text-align: center;
+}
+
+.intro{
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 51px;
+  margin: 5% auto auto auto;
   text-align: center;
 }
 
 .explanation{
+  color: #575757;
   font-family:"Open Sans", arial, sans-serif;
   font-size: 18px;
   margin: auto;
   text-align: justify;
   width: 80%
 }
+
+.catchphrase{
+  color: #575757;
+  font-family:"Open Sans", arial, sans-serif;
+  font-size: 18px;
+  margin: auto;
+  text-align: center;
+  width: 100%
+}
+
 
 #overlay{
   background-color: rgba(243,243,243,0.8);
@@ -32,9 +57,9 @@
 
 
 #shoplink{
+  margin: 50px auto ;
   font-family:"Open Sans", arial, sans-serif;
   font-size: 18px;
-  margin: 50px auto ;
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
   width: fit-content
