@@ -1,8 +1,31 @@
+@import "main/main.css";
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 50px;
 }
 
 a {
-  color: #00B7FF;
+  color: #000000 !important;
+  text-decoration: none ;
+  transition: all 0.2s ease 0s;
+}
+
+.nav-link:hover{
+  border-bottom: 1.5px solid #000000;
+}
+
+.nav-link{
+  border-bottom: 1.5px solid transparent;
+  color: #000000;
+  font-weight: 600;
+  padding: 8px
+}
+
+.navbar-brand{
+  border: 2px solid #000000;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem !important;
+  font-weight: 500;
+  padding: 8px
 }

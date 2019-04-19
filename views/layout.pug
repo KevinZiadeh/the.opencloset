@@ -4,11 +4,15 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet" href="/bootstrap/css/bootstrap.css" )
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display" rel="stylesheet")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous")
+
+
     
   body(style='padding: 0px')
-    nav.navbar.navbar-expand-md.bg-dark.navbar-dark
+    nav.navbar.navbar-expand-md.bg-light(style='font-family: "Open Sans", arial, sans-serif;')
       a.navbar-brand(href='/') the.opencloset
-      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#collapsibleNavbar')
+      button.navbar-toggler.navbar-light(type='button', data-toggle='collapse', data-target='#collapsibleNavbar')
         span.navbar-toggler-icon
       #collapsibleNavbar.collapse.navbar-collapse
         ul.navbar-nav
@@ -36,11 +40,11 @@ html
       if errors
         each error, i in errors
           div(class='alert alert-danger') #{error.msg}
-      block content
-      br  
-      hr
-      footer  
-        p Copyright &copy; the.opencloset 2020
+    block content
+    br  
+    hr
+    footer
+      p(style={'text-align': 'center'}) Copyright &copy; the.opencloset 2020
 
   script(src="/jquery/jquery.js")
   script(src="/bootstrap/js/bootstrap.js")

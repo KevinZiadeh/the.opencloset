@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/', (req, res) => {
   res.render('main', {
-    title: 'Welcome'
+    title: 'Dare to Share'
   })
 })
 
