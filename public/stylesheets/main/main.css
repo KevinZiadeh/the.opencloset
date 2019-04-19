@@ -5,8 +5,8 @@
 .main_image{
   width: 100%;
   height: 100%
-  /* z-index: 0 */
 }
+
 
 .wrapper{
   position: relative;
@@ -25,7 +25,7 @@
 .intro{
   font-family: "Playfair Display", Georgia, serif;
   font-size: 51px;
-  margin: 5% auto auto auto;
+  margin: 15% auto auto auto;
   text-align: center;
 }
 
@@ -48,33 +48,70 @@
 }
 
 
-#overlay{
+.overlay{
   background-color: rgba(243,243,243,0.8);
   font-family: "Open Sans", arial, sans-serif;
+  height: 100%;
   padding: 0;
+  position: absolute !important;
+  min-width: 400px;
   /* z-index: 1; */
 }
 
 
-#shoplink{
-  margin: 50px auto ;
+.shoplink{
   font-family:"Open Sans", arial, sans-serif;
   font-size: 18px;
+  margin: 15% auto ;
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
   width: fit-content
 }
 
-#shoplink:hover{
+.shoplink:hover{
   background-color: rgb(124, 124, 124);
   box-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px -10px;
   transform: scale(1.02);
 }
 
-#shoplink > a{
+.shoplink > a{
 background-color: rgb(111,111,111) ;
 border-color:rgb(250,250,250);
 color: rgb(250,250,250) !important;
 padding: 15px 40px;
 text-decoration: none !important;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .overlay{
+    position: relative !important;
+  }
+}
+
+@media only screen and (max-width: 1204px) {
+  .intro{
+    font-size:47px;
+    margin: 12% auto auto auto;
+  }
+  .catchphrase{
+    font-size:14px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .intro{
+    font-size:35px;
+    margin: 10% auto auto auto;
+  }
+  .catchphrase{
+    font-size:14px;
+  }
+  .shoplink{
+    font-size: 16px;
+    margin: 10% auto ;
+  }
+  .shoplink > a{
+    padding: 10px 30px;
+  }
 }
