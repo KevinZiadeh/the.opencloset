@@ -1,7 +1,6 @@
 create seller dashboard
 
 do smooth scroll elements
-do main page image overlay
 do footer ----- follow us
 add contact us and about us pages
 
