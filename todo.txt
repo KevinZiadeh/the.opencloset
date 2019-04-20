@@ -1,7 +1,5 @@
 create seller dashboard
 
-do smooth scroll elements
-do footer ----- follow us
 add contact us and about us pages
 
 create closet menu listing

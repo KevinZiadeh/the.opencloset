@@ -1,16 +1,18 @@
 .row{
-  margin: 0 !important;
+  margin: 0;
+  position: relative;
 }
 
 .main_image{
+  height: 100%;
   width: 100%;
-  height: 100%
 }
 
 
 .wrapper{
   position: relative;
   top: 50%;
+  visibility: hidden;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -49,13 +51,13 @@
 
 
 .overlay{
+  background-color: rgb(243, 243, 243);
   background-color: rgba(243,243,243,0.8);
   font-family: "Open Sans", arial, sans-serif;
-  padding: 0;
-  position: absolute !important;
-  min-height: 300px;
+  height: 100%;
   min-width: 400px;
-  /* z-index: 1; */
+  padding: 0;
+  position: absolute;
 }
 
 
@@ -77,15 +79,137 @@
 .shoplink > a{
 background-color: rgb(111,111,111) ;
 border-color:rgb(250,250,250);
-color: rgb(250,250,250) !important;
+color: rgb(250,250,250);
 padding: 15px 40px;
-text-decoration: none !important;
 }
 
 
+
+.slide {
+  animation-duration: 1.2s;
+  animation-name: slide;
+  visibility: visible;
+  -webkit-animation-duration: 1.2s;
+  -webkit-animation-name: slide;
+}
+
+.contact_form{
+  background-color: rgb(105, 105, 105);
+  color: rgb(243,243,243);
+  font-family:"Open Sans", arial, sans-serif;
+  font-size: 18px;
+  min-width: 420px;
+  padding: 30px 20px 0 20px;
+  text-transform: uppercase;
+}
+
+.contact_title{
+  color: rgb(255,255,255);
+  font-family:"Open Sans", arial, sans-serif;
+  font-size: 23px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.contact_link{
+  font-family:"Open Sans", arial, sans-serif;
+  font-size: 16px;
+  margin: 5% auto ;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  width: fit-content
+}
+
+.contact_link:hover{
+  background-color: rgb(243,243,243);
+  box-shadow: rgba(200, 200, 200, 0.5) 0 10px 10px -10px;
+  transform: scale(1.02);
+}
+
+.contact_link > input{
+background-color: rgb(243,243,243) ;
+border-radius: unset;
+color: rgb(105,105,105);
+padding: 10px 20px;
+}
+
+.form-control.contact_textarea{
+  background-color: rgb(105, 105, 105);
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  color: rgb(243, 243, 243);
+  height: 100px;
+  margin: 10px auto 30px auto;
+  width: 80%;
+}
+
+.form-control.contact_textarea:focus{
+  border-bottom: 2.2px solid #ffffff;
+  border-left: 1.8px solid #ffffff;
+  border-right: 1.8px solid #ffffff;
+  border-top: 0;
+  box-shadow: none;
+}
+
+.contact_textarea::placeholder{
+  color: rgb(243, 243, 243);
+}
+
+.footer_title{
+  color: rgb(27,27,27);
+  font-family:"Open Sans", arial, sans-serif;
+  font-size: 23px;
+  margin-top: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.icons{
+  margin: 60px auto;
+  text-align: center;
+  width: 60%
+}
+
+.icons> a{
+  color: #000000;
+  margin:  auto 20px;
+}
+
+.icons>a:hover{
+  color: #007bff
+}
+
+.fa-instagram{
+  display: inline-block;
+  font-size: 30px;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20%);
+        transform: translateY(20%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+}
+
 @media only screen and (max-width: 767px) {
   .overlay{
-    position: relative !important;
+    position: relative;
   }
 }
 
@@ -106,6 +230,9 @@ text-decoration: none !important;
   }
   .catchphrase{
     font-size:14px;
+  }
+  .intro_text{
+    font-size: 30px;
   }
   .shoplink{
     font-size: 16px;

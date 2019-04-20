@@ -12,7 +12,7 @@ block content
           | & Borrow
         p.catchphrase Shopping has never been cheaper!
         .shoplink
-          a(href='/closet') Shop now
+          a.text-decoration-none(href='/closet') Shop now
   .row
     .col-md-5(style={'padding': '0px'})
       img.main_image(src='/images/why_lend.jpg')
@@ -43,6 +43,21 @@ block content
           | portal that provides an alternative and conscious way to enjoy fashion. 
     .col-md-5(style={'padding': '0px'})
       img.main_image(src='/images/why_borrow.jpg')
-        
-  //- button.images
-  //-   a(href='images') goto images
+  if user    
+    .row
+      .col-md-6.contact_form Contact us
+        .contact_title We're here to help
+        form(method='POST', action='/contact_us')
+          textarea.form-control.contact_textarea(name='contact_us', 
+          | placeholder='Looking for something specific? Let us know!')
+          .contact_link
+            input.btn(id="submit-button" type='submit',value='Send')
+      .col-md-6
+        .footer_title we have the best customers!
+        .explanation(style={'text-align': 'center', 'margin-top': '40px'}) 
+          | We love hearing from you! Drop us a line if you have a 
+          | question, or if you're looking for something special. 
+        .icons
+          a(href='https://www.instagram.com/the.opencloset/')
+              .fab.fa-instagram
+  
