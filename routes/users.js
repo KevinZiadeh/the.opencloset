@@ -24,32 +24,16 @@ router.get('/register', (req, res) => {
 //Post request
 router.post('/register', [
   body('name').not().isEmpty().withMessage('Name is required').isAlpha().withMessage('Name must be only letters'),
-  body('email').isEmail().withMessage('Email is not valid').custom((value, { req }) =>{
-    taken = User.find({email: value.toLowerCase()}, (err, user) => {
-      if (err){
-        console.log(err)
-      }
-      if (user){
-        return true
-      }
-      return false
-    })
-    if (taken){
+  body('email').isEmail().withMessage('Email is not valid').custom(async (value, { req }) =>{
+    let mail_taken = await taken({email: req.body.email.toLowerCase().trim()});
+    if (mail_taken){
       throw new Error('Email is already taken')
     };
     return true
   }),
-  body('username').not().isEmpty().withMessage('Username is required').custom((value, { req }) =>{
-    taken = User.find({username: value.toLowerCase()}, (err, user) => {
-      if (err){
-        console.log(err)
-      }
-      if (user){
-        return true
-      }
-      return false
-    })
-    if (taken){
+  body('username').custom(async (value, { req }) =>{
+    let user_taken = await taken({username: req.body.username.toLowerCase().trim()});
+    if (user_taken){
       throw new Error('Username is already taken')
     };
     return true
@@ -470,5 +454,14 @@ function ensureAuthenticated(req, res, next){
     req.flash('danger', 'Please login');
     res.redirect('/users/login');
   }
+}
+
+async function taken(query){
+    let user = await User.findOne(query)
+    if (user){
+      return true
+    }else{
+      return false
+    }
 }
 module.exports = router;
