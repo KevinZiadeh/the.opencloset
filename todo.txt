@@ -1,6 +1,8 @@
 create seller dashboard
 
-add contact us and about us pages
+contact us update instead of redirect
+
+handle error
 
 create closet menu listing
 create closet searching and filtering

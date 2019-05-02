@@ -174,7 +174,7 @@ router.post('/edit/:id', ensureAuthenticated, [
         const email = req.body.email.toLowerCase().trim();
         const username = req.body.username.toLowerCase().trim();
         const fav_color = (req.body.fav_color == 'Select your favorite color:' ? user.preferences.fav_color : req.body.fav_color)
-        const fav_type = (fav_type == 'Select your favorite type:' ? user.preferences.fav_type : fav_type)
+        const fav_type = (req.body.fav_type == 'Select your favorite type:' ? user.preferences.fav_type : req.body.fav_type)
         const location = req.body.location;
         console.log(user);
           if(errors){
@@ -247,9 +247,6 @@ router.post('/edit_password/:id', ensureAuthenticated, [
   const oldpassword = req.body.oldpassword.trim();
   const newpassword = req.body.newpassword.trim();
   const newpassword2 = req.body.newpassword2.trim();
-
-  // req.checkBody('newpassword','Password is required').notEmpty();
-  // req.checkBody('newpassword2','Passwords do not match').equals(req.body.newpassword);
 
   // Match Password
   User.findById(id, (err, user) => {

@@ -1,4 +1,5 @@
 @import "main/main.css";
+@import "main/about_us.css";
 
 body {
   font-family:"Open Sans", arial, sans-serif;
@@ -18,8 +19,8 @@ nav > a:hover{
 .nav-link{
   border-bottom: 1.5px solid transparent;
   color: #000000;
-  font-weight: 600;
-  padding: 8px
+  padding: 8px;
+  text-transform: uppercase;
 }
 
 .nav-link:hover{

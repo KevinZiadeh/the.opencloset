@@ -1,0 +1,55 @@
+.about_intro{
+  font-size: 20px;
+  margin-top: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%
+}
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 10px auto;
+  max-width: 70%;
+  padding: 0;
+  text-align: center;
+}
+
+.title {
+  color: grey;
+  font-size: 24px;
+  margin-top: 25px;
+}
+
+.card > img{
+  max-height: 250px;
+  width: 100%;
+}
+
+.card_name{
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+.card_text{
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.contact_bar{
+  background-color: #0f0f0f;
+  bottom: 0;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.contact_icon{
+  color: #fff;
+  font-size: 30px;
+  margin: 0 7px;
+  text-decoration: none;
+}
+
+.contact_icon:hover{
+  color: #fff;
+  opacity: 0.7
+}
