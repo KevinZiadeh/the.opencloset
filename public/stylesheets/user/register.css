@@ -1,0 +1,53 @@
+.register_window{
+  background-color: rgb(0, 180, 70);
+  height: 100vh;
+  position: relative;
+}
+
+.register_box{
+  background-color: #fff;
+  box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.3);
+  max-width: 900px;
+  min-width: 500px;
+  padding: 40px;
+  position: relative;
+  margin: auto;
+  top: 50px;
+  width: 50%
+}
+
+.register_box > h1{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 32px;
+}
+
+.register_label{
+  color: rgb(90,180,60);
+}
+
+.register_input{
+  border: none;
+  border-bottom: 1px solid rgb(220,220,220);
+  border-radius: 0;
+  color: rgb(70,70,70);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.register_input:focus{
+  border-bottom: 1px solid rgb(220,220,220);
+  box-shadow: none;
+  color:inherit;
+  outline: none;
+}
+
+.register_button{
+  background-color: rgb(0,180, 70);
+  border: none;
+  border-radius: 0;
+  color: white;
+  font-size: 1.1rem;
+  padding: 15px;
+  width: 100%;
+}

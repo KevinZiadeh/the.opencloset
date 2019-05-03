@@ -1,5 +1,7 @@
 @import "main/main.css";
 @import "main/about_us.css";
+@import "user/login.css";
+@import "user/register.css";
 
 body {
   font-family:"Open Sans", arial, sans-serif;

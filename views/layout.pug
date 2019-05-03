@@ -38,13 +38,12 @@ html
             a.nav-link(href='/about_us') about us
 
             
-    .container
+    .container(style={'position': 'absolute', 'z-index': '100', 'right': '50px', 'max-width': '250px'})
       != messages('message', locals)
       if errors
         each error, i in errors
           div(class='alert alert-danger') #{error.msg}
     block content
-    br  
     hr
     footer
       p(style={'text-align': 'center'}) Copyright &copy; the.opencloset - all rights reserved

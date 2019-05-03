@@ -1,37 +1,39 @@
 extends ../layout
 
 block content
-  h1 Register
-  form(method='POST', action='/users/register')
-    #form-group
-      label Name:
-      input.form-control(name='name', type='text')
-    #form-group
-      label Email:
-      input.form-control(name='email', type='text')
-    #form-group
-      label Username:
-      input.form-control(name='username', type='text')
-    #form-group
-      label Password:
-      input.form-control(name='password', type='password', id='password')
-      .alert.alert-warning.pswrdRequirements(style="display: none")
-        p Password should not contain a space at the end
-        p Password should at least :
-          ul
-            li Contain one letter
-            li Contain one number
-            li Contain one symbol ~<>?!@#$%^&*()
-            li Be 6 at least six letters
-      .progress
-        .progress-bar(role="progressbar", max='100', style='width: 0%', id='pswrdStrength')
-    #form-group
-      label Confirm Password:
-      input.form-control(name='password2', type='password')
-    br
-    input.btn.btn-success.register-button(id="submit-button" type='submit',value='Submit')
-    br
-    br
-    //- a.btn.btn-primary(href='/users/login/facebook')
-    //-   i.fab.fa-facebook-f 
-    //-   span(style='margin-left: 5px') Continue via Facebook
+  .register_window
+    .register_box
+      h1 Create an Acount
+      form(method='POST', action='/users/register')
+        #form-group
+          label.register_label Name
+          input.form-control.register_input(name='name', type='text', placeholder='Type here')
+        #form-group
+          label.register_label Email
+          input.form-control.register_input(name='email', type='text', placeholder='johndoe@example.com')
+        #form-group
+          label.register_label Username
+          input.form-control.register_input(name='username', type='text', placeholder='pumkin_pie')
+        #form-group
+          label.register_label Password
+          input.form-control.register_input(name='password', type='password', id='password', placeholder='.........')
+          .alert.alert-warning.pswrdRequirements(style="display: none")
+            p Password should not contain a space at the end
+            p Password should at least :
+              ul
+                li Contain one letter
+                li Contain one number
+                li Contain one symbol ~<>?!@#$%^&*()
+                li Be 6 at least six letters
+          .progress
+            .progress-bar(role="progressbar", max='100', style='width: 0%', id='pswrdStrength')
+        #form-group
+          label.register_label Confirm Password
+          input.form-control.register_input(name='password2', type='password', placeholder='.........')
+        br
+        input.register_button(id="submit-button" type='submit',value='Submit')
+        br
+        br
+        //- a.btn.btn-primary(href='/users/login/facebook')
+        //-   i.fab.fa-facebook-f 
+        //-   span(style='margin-left: 5px') Continue via Facebook

@@ -1,11 +1,14 @@
+upload to heroku
+
 create seller dashboard
 
 contact us update instead of redirect
 
-handle error
-
 create closet menu listing
 create closet searching and filtering
+
+add facebook login
+add google login
 
 do the money transaction
 
