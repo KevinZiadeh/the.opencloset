@@ -33,11 +33,12 @@
   font-size: 1.1rem;
   margin-bottom: 10px;
   padding: 10px;
+  transition: all 0.3s;
 }
 
 .register_input:focus{
-  border-bottom: 1px solid rgb(220,220,220);
-  box-shadow: none;
+  border-bottom: 1px solid rgb(90,180,60);
+  box-shadow: 0 1px 0 0 rgb(90, 180, 60);
   color:inherit;
   outline: none;
 }
@@ -49,5 +50,11 @@
   color: white;
   font-size: 1.1rem;
   padding: 15px;
+  transition: all, 0.3s;
   width: 100%;
+}
+
+.register_button:hover{
+  background-color: rgb(110,180, 70);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
