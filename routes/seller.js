@@ -51,7 +51,7 @@ router.post('/', ensureAuthenticated, [
                return
              } else{
                req.flash('success','You are now a seller');
-               res.redirect('/dashboard');
+               res.redirect('seller//dashboard');
              }
            })
        }
