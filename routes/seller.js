@@ -56,11 +56,8 @@ router.post('/', ensureAuthenticated, [
            })
        }
       } else {
-        req.flash('danger', 'Wrong password');
-        res.render('./seller/seller', {
-          title: 'Register',
-          seller: req.user
-        })
+        req.flash('danger', 'Password is incorrect');
+        res.redirect('/seller')
       }
     })
   })
