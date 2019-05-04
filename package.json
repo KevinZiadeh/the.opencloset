@@ -15,6 +15,7 @@
     "connect-mongo": "^2.0.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
+    "dotenv": "^8.0.0",
     "email-verification": "^0.4.6",
     "express": "^4.16.4",
     "express-messages": "^1.0.1",

@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const  dotenv = require('dotenv').config();
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -20,7 +21,7 @@ const config = require('./config/database');
 
 const app = express();
 
-
+console.log(process.env);
 // Load view engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

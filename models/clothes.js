@@ -20,6 +20,9 @@ const ClothesSchema = mongoose.Schema({
   },
   description:{
     type: String
+  },
+  color: {
+    type: String
   }
 });
 

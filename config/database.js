@@ -1,4 +1,4 @@
 module.exports = {
-  database:'mongodb://localhost:27017/theopencloset',
+  database:process.env.MONGO_URI,
   secret:'mysecret'
 };
