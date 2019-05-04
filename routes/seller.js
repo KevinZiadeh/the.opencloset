@@ -35,7 +35,7 @@ router.post('/', ensureAuthenticated, [
         const location = req.body.location
         const phone_number = req.body.phone_number
         if(!errors.isEmpty()){
-         return res.render('/seller/seller', {
+         return res.render('./seller/seller', {
            errors:errors.mapped(),
            title: 'Register',
            seller: req.user
@@ -55,6 +55,12 @@ router.post('/', ensureAuthenticated, [
              }
            })
        }
+      } else {
+        req.flash('danger', 'Wrong password');
+        res.render('./seller/seller', {
+          title: 'Register',
+          seller: req.user
+        })
       }
     })
   })

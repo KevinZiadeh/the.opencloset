@@ -176,7 +176,6 @@ router.post('/edit/:id', ensureAuthenticated, [
         const fav_color = (req.body.fav_color == 'Select your favorite color:' ? user.preferences.fav_color : req.body.fav_color)
         const fav_type = (req.body.fav_type == 'Select your favorite type:' ? user.preferences.fav_type : req.body.fav_type)
         const location = req.body.location;
-        console.log(user);
           if(errors){
             User.findById(id, (err, user) => {
               if (err) {
