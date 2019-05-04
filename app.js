@@ -21,7 +21,6 @@ const config = require('./config/database');
 
 const app = express();
 
-console.log(process.env);
 // Load view engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -93,12 +92,15 @@ app.get('*', function(req, res, next){
 
 
 //MongoDb connection
-
-mongoose.connect(config.database, {
-  useMongoClient: true,
-});
+console.log(config.database);
+mongoose.connect(config.database, {useMongoClient: true}, function (err, res) {
+      if (err) {
+      console.log ('ERROR connecting to: ' + config.database + '. ' + err);
+      } else {
+      console.log ('Succeeded connected to: ' + config.database);
+      }
+    });
 let db = mongoose.connection;
-db.once('open', ()=> console.log('connected to the database'));
 
 // Check for DB errors
 db.on('error', function(err){
