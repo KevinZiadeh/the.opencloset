@@ -31,7 +31,7 @@ router.post('/register', [
     };
     return true
   }),
-  body('username').custom(async (value, { req }) =>{
+  body('username').not().isEmpty().withMessage('Username is required').custom(async (value, { req }) =>{
     let user_taken = await taken({username: req.body.username.toLowerCase().trim()});
     if (user_taken){
       throw new Error('Username is already taken')
