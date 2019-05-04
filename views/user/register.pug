@@ -5,18 +5,18 @@ block content
     .register_box
       h1 Create an Acount
       form(method='POST', action='/users/register')
-        #form-group
-          label.register_label Name
-          input.form-control.register_input(name='name', type='text', placeholder='Type here')
-        #form-group
-          label.register_label Email
-          input.form-control.register_input(name='email', type='text', placeholder='johndoe@example.com')
-        #form-group
-          label.register_label Username
-          input.form-control.register_input(name='username', type='text', placeholder='pumkin_pie')
-        #form-group
-          label.register_label Password
-          input.form-control.register_input(name='password', type='password', id='password', placeholder='.........')
+        .register_form
+          //- label.register_label Name
+          input.form-control.register_input(name='name', type='text', placeholder='name')
+        .register_form
+          //- label.register_label Email
+          input.form-control.register_input(name='email', type='text', placeholder='email')
+        .register_form
+          //- label.register_label Username
+          input.form-control.register_input(name='username', type='text', placeholder='username')
+        .register_form
+          //- label.register_label Password
+          input.form-control.register_input(name='password', type='password', id='password', placeholder='password')
           .alert.alert-warning.pswrdRequirements(style="display: none")
             p Password should not contain a space at the end
             p Password should at least :
@@ -27,9 +27,9 @@ block content
                 li Be 6 at least six letters
           .progress
             .progress-bar(role="progressbar", max='100', style='width: 0%', id='pswrdStrength')
-        #form-group
-          label.register_label Confirm Password
-          input.form-control.register_input(name='password2', type='password', placeholder='.........')
+        .register_form
+          //- label.register_label Confirm Password
+          input.form-control.register_input(name='password2', type='password', placeholder='confirm password')
         br
         input.register_button(id="submit-button" type='submit',value='Submit')
         br
