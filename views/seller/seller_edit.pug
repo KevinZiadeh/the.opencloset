@@ -29,10 +29,7 @@ block content
         option Casual
         option Formal
         option Party
-    if user.seller_status
-      #form-group
-        label Location:
-        input.form-control(name='location', type='text', value=user.location)
+    #form-group
       label Password:
       input.form-control(name='password', type='password')
     br

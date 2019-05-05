@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  form(method='POST', action='/seller/add')
+    #form-group
+      label Title:
+      input.form-control(name='title', type='text' placeholder=Title)
+    #form-group
+      label Type:
+      input.form-control(name='type', type='text' placeholder=Type)
+    #form-group
+      label Price:
+      input.form-control(name='price', type='number' placeholder=Price)
+    #form-group
+      label Size:
+      input.form-control(name='measurement', type='text' placeholder=Size)
+    #form-group
+      label Description:
+      input.form-control(name='description', type='text' placeholder=Description)
+    #form-group
+      label Color:
+      input.form-control(name='color', type='text' placeholder=Color)
+    br
+    input.btn.btn-outline-success(type='submit',value='Submit')

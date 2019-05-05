@@ -1,11 +1,10 @@
-upload to heroku
-
-create seller dashboard
-
-contact us update instead of redirect
+design for seller folder and finish user folder
+check password change
 
 create closet menu listing
 create closet searching and filtering
+
+contact us update instead of redirect
 
 add facebook login
 add google login
@@ -15,3 +14,8 @@ do the money transaction
 do the recommendation
 
 do location help
+
+item availability
+price per country
+money exchange and protocol
+notification for seller when someone want to lend

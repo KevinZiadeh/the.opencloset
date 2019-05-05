@@ -3,3 +3,13 @@ extends ../layout
 block content
   h1 #{seller.name}
   h3 #{seller.location}
+  a(href='./add') Add Item
+  a(href='/users/edit/'+seller._id) Edit your info
+  if items
+    h3 your items
+    each item in items
+      h5= item.title
+      h6= price
+      a(href='./edit/'+item._id) edit
+      br 
+      hr

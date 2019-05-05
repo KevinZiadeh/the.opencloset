@@ -6,6 +6,10 @@ const ClothesSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  type:{
+    type: String,
+    required: true,
+  },
   seller_id:{
     type: String,
     required: true
@@ -14,7 +18,7 @@ const ClothesSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  size:{
+  measurement:{
     type: String,
     required: true
   },

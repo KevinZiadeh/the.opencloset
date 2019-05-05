@@ -4,34 +4,12 @@ block content
   h1 Edit Account information
   h4 Please enter all fields
   form(method='POST', action='/seller')
-    //- #form-group
-    //-   label Name:
-    //-   input.form-control(name='name', type='text', value=seller.name)
-    //- #form-group
-    //-   label Email:
-    //-   input.form-control(name='email', type='text', value=seller.email)
     #form-group
       label Phone number:
       input.form-control(name='phone_number', type='number', value=seller.phone_number)
     #form-group
       label Location
       input.form-control(name='location', type='text' value=seller.location)
-    //- #form-group
-    //-   select.from-control(name='fav_color' type='select')
-    //-     option(selected) Select your favorite color:
-    //-     option Red
-    //-     option Blue
-    //-     option Yellow
-    //-     option Black
-    //-     option White
-    //-     option Grey
-    //-     option Green
-    //- #form-group
-    //-   select.from-control(name='fav_type' type='select')
-    //-     option(selected) Select your favorite type:
-    //-     option Casual
-    //-     option Formal
-    //-     option Party
     #form-group
       label Password:
       input.form-control(name='password', type='password')

@@ -197,7 +197,7 @@ router.post('/edit/:id', ensureAuthenticated, [
                fav_color: fav_color,
                fav_type: fav_type
              }
-             // user.location = location
+             user.location = location
              updated_at = new Date()
              let query = {_id: req.params.id}
 
