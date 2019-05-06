@@ -23,26 +23,10 @@ block content
                 .dashboarditems_info
                   p.dashboard_title= item.title
                   p.dashboard_price= item.price
-                  p.dashboard_description mmmmmmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmmmmmmm
+                  p.dashboard_description= item.description 
                 .dashboarditems_bar
                   .row
-                    .col-sm-6.dashboard_link
-                      a(href='./edit/'+item._id) Edit
-                    .col-sm-6.dashboard_link
-                      a(href='./remove/'+item_id) Remove
-          each item in items
-            .col-xl-4.col-lg-6
-              .dashboarditems_list
-                .dashboarditems_image
-                .dashboarditems_info
-                  p.dashboard_title= item.title
-                  p= item.price
-                  p= item.description
-                .dashboarditems_bar
-                  .row
-                    .col-sm-6.dashboard_link
-                      a(href='./edit/'+item._id) Edit
-                    .col-sm-6.dashboard_link
-                      a(href='./remove/'+item_id) Remove
+                    a(href='./edit/'+item._id).col-sm-6.dashboard_link Edit
+                    a(href='./remove/'+item_id).col-sm-6.dashboard_link Remove
       else
         p.noItemsDashboard You have no items for rent yet

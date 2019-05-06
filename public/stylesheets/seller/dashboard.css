@@ -109,22 +109,15 @@
 }
 
 .dashboard_link{
+  color: #fff;
   padding: 10px;
   transition: all, 0.2s;
 }
 
 .dashboard_link:hover{
   background-color: rgb(150,150,150);
-  cursor: pointer;
+  color: #fff;
   padding: 10px;
-}
-
-.dashboard_link>a{
-  color: #fff;
-}
-
-.dashboard_link>a:hover{
-  color: #fff;
   text-decoration: none;
 }
 

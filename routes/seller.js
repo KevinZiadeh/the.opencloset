@@ -53,7 +53,7 @@ router.post('/', ensureAuthenticated, [
                return
              } else{
                req.flash('success','You are now a seller');
-               res.redirect('seller//dashboard');
+               res.redirect('seller/dashboard');
              }
            })
        }
@@ -72,7 +72,7 @@ Clothes.find({seller_id: req.user.id}, (err, items)=>{
       console.log(err);
     }else{
       res.render('./seller/dashboard', {
-        title: 'dashboard',
+        title: 'Dashboard',
         seller: req.user,
         items: items
       })
