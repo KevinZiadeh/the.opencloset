@@ -5,7 +5,7 @@
   text-transform: uppercase;
   width: 100%
 }
-.card{
+.aboutuscard{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 10px auto;
   max-width: 70%;
@@ -13,12 +13,11 @@
   text-align: center;
 }
 
-.card > img{
-  /* max-height: 250px; */
+.aboutuscard > img{
   width: 100%;
 }
 
-.card_name{
+.aboutuscard_name{
   font-weight: 600;
   margin-bottom: 10px;
   margin-top: 25px;
@@ -30,7 +29,7 @@
   margin-top: 25px;
 }
 
-.card_text{
+.aboutuscard_text{
   font-size: 14px;
   margin-top: 15px;
 }
@@ -56,7 +55,7 @@
 
 
 @media only screen and (max-width: 1280px) {
-  .card_name{
+  .aboutuscard_name{
     font-size:30px;
   }
   .title{
@@ -64,7 +63,7 @@
     margin-bottom: 10px;
     margin-top: 20px;
   }
-  .card_text{
+  .aboutuscard_text{
     font-size: 12px;
   }
   .contact_bar{
@@ -78,7 +77,7 @@
 }
 
 @media only screen and (max-width: 980px) {
-  .card_name{
+  .aboutuscard_name{
     font-size:23px;
   }
   .title{
@@ -86,7 +85,7 @@
     margin-bottom: 7px;
     margin-top: 12px;
   }
-  .card_text{
+  .aboutuscard_text{
     font-size: 10px;
   }
   .contact_bar{

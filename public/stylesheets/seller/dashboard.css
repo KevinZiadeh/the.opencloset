@@ -1,0 +1,149 @@
+.d{
+  display: auto;
+  overflow-x: hidden;
+}
+
+.dashboard_sidebar {
+  transition: margin .25s ease-out;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+}
+
+.dashboard_sidebar .list-group {
+  min-width: 15rem;
+}
+
+.additem_link{
+  background-color: rgb(0,123,255);
+  color: #fff;
+  margin-right: 10px;
+  padding: 10px;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+.editseller_link{
+  background-color: rgb(0,175,65);
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+.additem_link:hover{
+  background-color: rgb(30,135,250);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-decoration: none;
+}
+
+.editseller_link:hover{
+  background-color: rgb(25,185,85);;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-decoration: none;
+}
+
+.noItemsDashboard{
+  font-size: 20px;
+  margin-left: 15%;
+  padding: 50px;
+}
+
+.dashboarditems_wrapper{
+  background-color: rgb(233, 233, 233);
+  color: rgb(70, 70, 70);
+  padding: 30px;
+  text-transform: uppercase;
+  width: 100%
+}
+
+.dashboarditems_list{
+  background-color: #fff;
+  height: 530px;
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  width: 100%;
+}
+
+.dashboarditems_image{
+  background-color: rgb(200,200,200);
+  margin-bottom: 10px;
+  min-height: 300px;
+  width: 100%;
+}
+.dashboarditems_info{
+  padding: 0 20px
+}
+
+.dashboard_title{
+  color: rgb(30, 30, 30);
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.dashboard_price{
+  color: rgb(80, 80, 80);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.dashboard_description{
+  color: rgb(50, 50, 50);
+  font-size: 15px;
+  margin: auto;
+  text-align: left;
+}
+
+.dashboarditems_bar{
+  background-color: #000;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.dashboard_link{
+  padding: 10px;
+  transition: all, 0.2s;
+}
+
+.dashboard_link:hover{
+  background-color: rgb(150,150,150);
+  cursor: pointer;
+  padding: 10px;
+}
+
+.dashboard_link>a{
+  color: #fff;
+}
+
+.dashboard_link>a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .dashboard_sidebar {
+    margin-left: 0;
+    min-height: 80vh;
+  }
+
+  .d{
+    display: flex;
+  }
+
+  .dashboard_items{
+    min-width: 0;
+    width: 100%;
+  }
+
+  .d.toggled .dashboard_sidebar {
+    margin-left: -15rem;
+  }
+}

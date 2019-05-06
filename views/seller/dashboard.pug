@@ -1,15 +1,48 @@
 extends ../layout
 
 block content
-  h1 #{seller.name}
-  h3 #{seller.location}
-  a(href='./add') Add Item
-  a(href='/users/edit/'+seller._id) Edit your info
-  if items
-    h3 your items
-    each item in items
-      h5= item.title
-      h6= price
-      a(href='./edit/'+item._id) edit
-      br 
-      hr
+  .d
+    .bg-light.border-right.dashboard_sidebar
+      .list-group.list-group-flush
+        h2.list-group-item.list-group-item-action.bg-light #{seller.name} 
+        h5.list-group-item.list-group-item-action.bg-light #{seller.location}
+        h6.list-group-item.list-group-item-action.bg-light #{seller.email}
+        h6.list-group-item.list-group-item-action.bg-light #{seller.phone_number}
+        .list-group-item.list-group-item-action.bg-light(style='padding: 15px 5px; text-align: center')
+          a.additem_link(href='./add') Add Item
+          a.editseller_link(href='/users/edit/'+seller._id) Edit your info
+      
+    .dashboarditems_wrapper
+      h3(style='margin: 0 auto 35px 50px;') Your items
+      if items.length != 0
+        .row
+          each item in items
+            .col-xl-4.col-lg-6
+              .dashboarditems_list
+                .dashboarditems_image
+                .dashboarditems_info
+                  p.dashboard_title= item.title
+                  p.dashboard_price= item.price
+                  p.dashboard_description mmmmmmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmmmmmmm
+                .dashboarditems_bar
+                  .row
+                    .col-sm-6.dashboard_link
+                      a(href='./edit/'+item._id) Edit
+                    .col-sm-6.dashboard_link
+                      a(href='./remove/'+item_id) Remove
+          each item in items
+            .col-xl-4.col-lg-6
+              .dashboarditems_list
+                .dashboarditems_image
+                .dashboarditems_info
+                  p.dashboard_title= item.title
+                  p= item.price
+                  p= item.description
+                .dashboarditems_bar
+                  .row
+                    .col-sm-6.dashboard_link
+                      a(href='./edit/'+item._id) Edit
+                    .col-sm-6.dashboard_link
+                      a(href='./remove/'+item_id) Remove
+      else
+        p.noItemsDashboard You have no items for rent yet

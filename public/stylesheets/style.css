@@ -2,6 +2,7 @@
 @import "main/about_us.css";
 @import "user/login.css";
 @import "user/register.css";
+@import "seller/dashboard.css";
 
 body {
   font-family:"Open Sans", arial, sans-serif;
