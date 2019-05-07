@@ -1,11 +1,8 @@
 design for seller folder and finish user folder
-remove item
-description shouldnt be bigger than 70 characters and one word not bigger than 22
-check password change
+image upload to clothes
+slideshow for product images
 
 contact us update instead of redirect
-
-image upload to clothes
 
 create closet menu listing
 create closet searching and filtering

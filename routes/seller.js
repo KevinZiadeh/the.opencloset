@@ -93,12 +93,22 @@ router.post('/add', ensureAuthenticated, [
   body('title').not().isEmpty().withMessage('Title is required'),
   body('measurement').not().isEmpty().withMessage('Size is required'),
   body('price').not().isEmpty().withMessage('Price is required').isDecimal().withMessage('Price  must be a number'),
+  body('description').isLength({max: 70}).withMessage("Description shouldn't be bigger than 70 characters").custom(value=>{
+    wordCheck = value.split(' ')
+    wordCheck.forEach((word)=>{
+      if (word.length > 22){
+        throw new Error('One word cannot be bigger than 22 characters')
+      }
+    })
+    return true
+  }),
 ], (req, res)=>{
   let errors = validationResult(req);
   if(!errors.isEmpty()){
    return res.render('./seller/add_clothes', {
      errors:errors.mapped(),
      title: 'Add clothes',
+     user: req.user,
      seller: req.user
    });
  }else{
@@ -140,6 +150,15 @@ router.post('/edit/:id', ensureAuthenticated, [
   body('title').not().isEmpty().withMessage('Title is required'),
   body('measurement').not().isEmpty().withMessage('Size is required'),
   body('price').not().isEmpty().withMessage('Price is required').isDecimal().withMessage('Price  must be a number'),
+  body('description').isLength({max: 70}).withMessage("Description shouldn't be bigger than 70 characters").custom(value=>{
+    wordCheck = value.split(' ')
+    wordCheck.forEach((word)=>{
+      if (word.length > 22){
+        throw new Error('One word cannot be bigger than 22 characters')
+      }
+    })
+    return true
+  }),
 ], (req, res)=>{
   pth = req.originalUrl.split('/')
   id = pth[pth.length-1];
@@ -150,7 +169,8 @@ router.post('/edit/:id', ensureAuthenticated, [
        errors:errors.mapped(),
        title: 'Add clothes',
        seller: req.user,
-       item: item
+       item: item,
+       user: user
      });
    }else{
      var updatedItem= {
@@ -172,6 +192,17 @@ router.post('/edit/:id', ensureAuthenticated, [
        })
      }
  })
+})
+
+//delete item
+router.get('/remove/:id', ensureAuthenticated, (req, res)=>{
+  Clothes.findOne({_id: req.params.id}, async (err, item)=>{
+    if (item.seller_id == req.user._id){
+      await Clothes.remove({_id: req.params.id})
+    }
+  })
+  req.flash('success', 'You have successfully removed an item')
+  res.redirect('/seller/dashboard')
 })
 
 

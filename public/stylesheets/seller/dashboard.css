@@ -61,7 +61,7 @@
 
 .dashboarditems_list{
   background-color: #fff;
-  height: 530px;
+  height: 580px;
   margin: 20px auto;
   max-width: 400px;
   padding: 0;
@@ -74,7 +74,7 @@
 .dashboarditems_image{
   background-color: rgb(200,200,200);
   margin-bottom: 10px;
-  min-height: 300px;
+  min-height: 350px;
   width: 100%;
 }
 .dashboarditems_info{

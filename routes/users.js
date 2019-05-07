@@ -39,8 +39,7 @@ router.post('/register', [
     return true
   }),
   body('password').not().isEmpty().withMessage('Password is required').isLength({min: 8}).withMessage('Password is too short'),
-  body('password2').not().isEmpty().withMessage('Please confirm your password'),
-  body('password2').custom((value, { req }) => {
+  body('password2').not().isEmpty().withMessage('Please confirm your password').custom((value, { req }) => {
   if (value !== req.body.password) {
     throw new Error('Passwords do not match');
   }
@@ -233,8 +232,8 @@ router.get('/edit_password/:id', ensureAuthenticated, function(req, res){
 });
 //Post request
 router.post('/edit_password/:id', ensureAuthenticated, [
-  body('newpassword').not().isEmpty().withMessage('New password is required'),
-  body('newpassword2').custom((value, { req }) => {
+  body('newpassword').not().isEmpty().withMessage('New password is required').isLength({min: 8}).withMessage('Password is too short'),
+  body('newpassword2').not().isEmpty().withMessage('Please confirm your password').custom((value, { req }) => {
   if (value !== req.body.newpassword) {
     throw new Error('Passwords do not match');
   }
