@@ -2,23 +2,75 @@ extends ../layout
 
 block content
   form(method='POST', action='/seller/add')
-    #form-group
-      label Title:
-      input.form-control(name='title', type='text' placeholder=Title)
-    #form-group
-      label Type:
-      input.form-control(name='type', type='text' placeholder=Type)
-    #form-group
-      label Price:
-      input.form-control(name='price', type='number' placeholder=Price)
-    #form-group
-      label Size:
-      input.form-control(name='measurement', type='text' placeholder=Size)
-    #form-group
-      label Description:
-      input.form-control(name='description', type='text' maxlength=69 placeholder=Description)
-    #form-group
-      label Color:
-      input.form-control(name='color', type='text' placeholder=Color)
-    br
-    input.btn.btn-outline-success(type='submit',value='Submit')
+    .row(style='margin-top: 20px;')
+      .col-xl-5
+        .itemadd_image
+          input.itemadd_imageinput(type='file' id='customFile' multiple)
+          label.itemadd_imagelabel(for='customFile') Upload Image
+      .col-xl-7
+        .row
+          .col-md-6
+            input.itemadd_formelements(name='title' type='text' placeholder='Title' maxlength=40 autocomplete='off')
+          .col-md-3
+            select.itemadd_select(name='sex' type='text')
+              option(selected) Select Option
+              option.itemadd_sexoption Male
+              option.itemadd_sexoption Female
+              option.itemadd_sexoption Unisex
+          .col-md-3
+            input.itemadd_formelements(name='brand' type='text' placeholder= 'Brand' maxlength=20)
+        .row
+          .col-md-6
+            select.itemadd_selectmult.itemadd_select.itemadd_selecttype(name='type' type='text')
+              option(selected) Select Type
+              option.itemadd_typeoption Casual
+              option.itemadd_typeoption Formal
+              option.itemadd_typeoption Party
+              option.itemadd_typeoption Outing
+              option.itemadd_typeoption Camping
+          .col-md-4
+            select.itemadd_selectmult.itemadd_select.itemadd_selectcolor(name='color' type='text')
+              option(selected) Select Color
+              option.itemadd_coloroption Red
+              option.itemadd_coloroption Green
+              option.itemadd_coloroption Blue
+              option.itemadd_coloroption Black
+              option.itemadd_coloroption Yellow
+              option.itemadd_coloroption Pink
+              option.itemadd_coloroption Orange
+              option.itemadd_coloroption Dark Blue
+              option.itemadd_coloroption Purple
+              option.itemadd_coloroption Whitw
+              option.itemadd_coloroption Gold
+          .col-md-2
+            select.itemadd_selectmult.itemadd_select.itemadd_selectsize(name='measurement' type='text')
+              option(selected) Size
+              option.itemadd_sizeoption XS
+              option.itemadd_sizeoption S
+              option.itemadd_sizeoption M
+              option.itemadd_sizeoption L
+              option.itemadd_sizeoption XL
+              option.itemadd_sizeoption XXL
+        .row
+          .col-md-6
+            select.itemadd_selectmult.itemadd_select.itemadd_selectattr(name='attribute' type ='text')
+              option(selected) Select Type
+              option.itemadd_attroption Pants
+              option.itemadd_attroption Boots
+              option.itemadd_attroption Socks
+              option.itemadd_attroption Skirt
+              option.itemadd_attroption Dress
+              option.itemadd_attroption T-Shirt
+              option.itemadd_attroption Shirt
+              option.itemadd_attroption Polo
+              option.itemadd_attroption Tank-Top
+              option.itemadd_attroption Sleaveless
+              option.itemadd_attroption Suit
+          .col-md-6
+            input.itemadd_formelements(name='price' type='number' placeholder='Price' min=0)
+        .row
+          label Description:
+          textarea.itemadd_formelements(name='description' type='text' maxlength=69)
+        .row
+          .col-md-7(style='margin: auto')
+            input.btn.btn-outline-success.itemadd_button(type='submit',value='ADD ITEM')

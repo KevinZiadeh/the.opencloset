@@ -1,0 +1,74 @@
+.itemadd_image{
+  background-color: rgb(210, 210, 210);
+  height: 600px;
+  margin: auto;
+  text-align: center;
+  width: 450px
+}
+
+.itemadd_imageinput{
+  display: none;
+}
+
+.itemadd_imagelabel{
+  background-color: #fff;
+  border-radius: 0;
+  color: rgb(80, 80, 80);
+  cursor: pointer;
+  font-size: 16px;
+  margin: 250px auto;
+  padding: 15px;
+  position: relative;
+  transition: all 0.25s;
+}
+
+.itemadd_imagelabel:hover{
+  background-color: rgb(80,80,80);
+  border-radius: 0;
+  color: #fff;
+}
+
+.itemadd_button{
+  border-radius: 0;
+  width: 100%
+}
+
+.itemadd_formelements{
+  /* background-color: */
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  color: rgb(80, 80, 80);
+  font-size: 16px;
+  margin: auto;
+  margin-bottom: 50px;
+  padding: 15px;
+  transition: all 0.3s;
+  width: 95%;
+}
+
+.itemadd_formelements:focus{
+  border: none;
+  border-bottom: 1px solid rgb(90,180,60);
+  box-shadow: 0 1px 0 0 rgb(90, 180, 60);
+  outline: none;
+}
+
+.itemadd_select{
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  border-top: 1px solid transparent;
+  color: rgb(80, 80, 80);
+  font-size: 16px;
+  margin: auto;
+  margin-bottom: 50px;
+  padding: 15px;
+  transition: all 0.3s;
+  width: 95%;
+}
+
+.itemadd_select:focus{
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid rgb(90,180,60);
+  box-shadow: 0 -1px 0 0 rgb(90, 180, 60);
+  outline: none;
+}

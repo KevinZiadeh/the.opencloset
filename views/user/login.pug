@@ -6,7 +6,7 @@ block content
     .login_form
       form(method='POST', action='/users/login')
         #form-group
-          input.form-control.login_input(name='username',type='text', placeholder='username or email')
+          input.form-control.login_input(name='username',type='text', placeholder='username or email' autofocus)
         #form-group
           input.form-control.login_input(name='password',type='password', placeholder='password')
         button.login_button(type='submit',value='Submit', style='margin-right: 10px') LOGIN

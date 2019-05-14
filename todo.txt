@@ -7,14 +7,12 @@ contact us update instead of redirect
 create closet menu listing
 create closet searching and filtering
 
+check forgot password
+
 add facebook login
 add google login
 
-do the money transaction
-
-do the recommendation
-
-do location help
+do address for seller correcly
 
 item availability
 price per country
@@ -23,3 +21,11 @@ notification for seller when someone want to lend
 how to deliver items
 
 do reviews and ratings
+
+do the money transaction
+
+do location help
+
+do the recommendation
+
+add wishlist and bookmark page

@@ -27,6 +27,16 @@ const ClothesSchema = mongoose.Schema({
   },
   color: {
     type: String
+  },
+  sex:{
+    type: String
+  },
+  brand:{
+    type: String
+  },
+  attribute:{
+    type: String,
+    required: true
   }
 });
 
