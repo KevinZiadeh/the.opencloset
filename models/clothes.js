@@ -7,7 +7,7 @@ const ClothesSchema = mongoose.Schema({
     required: true
   },
   type:{
-    type: String,
+    type: Array,
     required: true,
   },
   seller_id:{
@@ -19,14 +19,14 @@ const ClothesSchema = mongoose.Schema({
     required: true
   },
   measurement:{
-    type: String,
+    type: Array,
     required: true
   },
   description:{
     type: String
   },
   color: {
-    type: String
+    type: Array
   },
   sex:{
     type: String
@@ -35,7 +35,7 @@ const ClothesSchema = mongoose.Schema({
     type: String
   },
   attribute:{
-    type: String,
+    type: Array,
     required: true
   }
 });

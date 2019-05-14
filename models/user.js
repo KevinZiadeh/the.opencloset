@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-//const uniqueValidator = require('mongoose-unique-validator');
 
 // User Schema
 const UserSchema = mongoose.Schema({
@@ -11,7 +10,6 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: false,
     unique: true,
-    //uniqueCaseInsensitive: true
   },
   username:{
     type: String,
@@ -40,6 +38,4 @@ const UserSchema = mongoose.Schema({
   resetPasswordExpires: Date,
 });
 
-// Apply the uniqueValidator plugin to userSchema.
-//UserSchema.plugin(uniqueValidator, { message: 'Error, expected {PATH} to be unique.' } );
 let User = module.exports = mongoose.model('User', UserSchema);

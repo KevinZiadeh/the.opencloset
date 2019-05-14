@@ -6,31 +6,33 @@ block content
       .col-xl-5
         .itemadd_image
           input.itemadd_imageinput(type='file' id='customFile' multiple)
-          label.itemadd_imagelabel(for='customFile') Upload Image
+          label.itemadd_imagelabel(for='customFile') Upload Images
       .col-xl-7
         .row
           .col-md-6
-            input.itemadd_formelements(name='title' type='text' placeholder='Title' maxlength=40 autocomplete='off')
+            input.itemadd_formelements(
+              name='title' type='text' placeholder='Title' maxlength=40 autocomplete='off')
           .col-md-3
-            select.itemadd_select(name='sex' type='text')
-              option(selected) Select Option
+            select.itemadd_select(
+              name='sex' type='text' data-placeholder="Select")
+              option(style='color: red')
               option.itemadd_sexoption Male
               option.itemadd_sexoption Female
               option.itemadd_sexoption Unisex
           .col-md-3
             input.itemadd_formelements(name='brand' type='text' placeholder= 'Brand' maxlength=20)
         .row
-          .col-md-6
-            select.itemadd_selectmult.itemadd_select.itemadd_selecttype(name='type' type='text')
-              option(selected) Select Type
+          .col-md-4
+            select.itemadd_selectmult.itemadd_select.itemadd_selecttype(
+              name='type' type='text' multiple data-placeholder="Event")
               option.itemadd_typeoption Casual
               option.itemadd_typeoption Formal
               option.itemadd_typeoption Party
               option.itemadd_typeoption Outing
               option.itemadd_typeoption Camping
-          .col-md-4
-            select.itemadd_selectmult.itemadd_select.itemadd_selectcolor(name='color' type='text')
-              option(selected) Select Color
+          .col-md-5
+            select.itemadd_selectmult.itemadd_select.itemadd_selectcolor(
+              name='color' type='text' multiple data-placeholder="Color")
               option.itemadd_coloroption Red
               option.itemadd_coloroption Green
               option.itemadd_coloroption Blue
@@ -42,9 +44,9 @@ block content
               option.itemadd_coloroption Purple
               option.itemadd_coloroption Whitw
               option.itemadd_coloroption Gold
-          .col-md-2
-            select.itemadd_selectmult.itemadd_select.itemadd_selectsize(name='measurement' type='text')
-              option(selected) Size
+          .col-md-3
+            select.itemadd_selectmult.itemadd_select.itemadd_selectsize(
+              name='measurement' type='text' multiple data-placeholder="Size")
               option.itemadd_sizeoption XS
               option.itemadd_sizeoption S
               option.itemadd_sizeoption M
@@ -52,9 +54,9 @@ block content
               option.itemadd_sizeoption XL
               option.itemadd_sizeoption XXL
         .row
-          .col-md-6
-            select.itemadd_selectmult.itemadd_select.itemadd_selectattr(name='attribute' type ='text')
-              option(selected) Select Type
+          .col-md-7
+            select.itemadd_selectmult.itemadd_select.itemadd_selectattr.chosen-select(
+              name='attribute' type ='text' multiple data-placeholder="Type")
               option.itemadd_attroption Pants
               option.itemadd_attroption Boots
               option.itemadd_attroption Socks
@@ -66,7 +68,7 @@ block content
               option.itemadd_attroption Tank-Top
               option.itemadd_attroption Sleaveless
               option.itemadd_attroption Suit
-          .col-md-6
+          .col-md-5
             input.itemadd_formelements(name='price' type='number' placeholder='Price' min=0)
         .row
           label Description:
