@@ -114,5 +114,11 @@
 
 .chosen-choices > li{
   height: 24px;
+}
 
+.chosen-container-multi .chosen-choices li.search-choice{
+  background-color: #fff;
+  border: 1.3px solid rgb(0,180,60);
+  box-shadow: none;
+  background-image: none;
 }

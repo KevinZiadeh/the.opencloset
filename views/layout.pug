@@ -37,7 +37,7 @@ html
             a.nav-link(href='/about_us') about us
 
             
-    .container(style={'position': 'absolute', 'z-index': '100', 'right': '50px', 'max-width': '250px'})
+    .container#errormsgscontainer(style={'position': 'absolute', 'z-index': '100', 'right': '50px', 'max-width': '250px'})
       != messages('message', locals)
       if errors
         each error, i in errors

@@ -9,4 +9,5 @@ $(document).ready(function() {
     }
   });
 });
+$("#errormsgscontainer").delay(4000).fadeOut(400)
 });
