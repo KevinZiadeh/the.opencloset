@@ -4,8 +4,9 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-./config/admin.js
-./todo.txt
+
+config/admin.js
+todo.txt
 
 # Runtime data
 pids
