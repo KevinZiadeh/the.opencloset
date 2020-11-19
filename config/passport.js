@@ -29,21 +29,6 @@ module.exports = function(passport){
     });
   }));
 
-
-  //Facebook Strategy
-//   passport.use(new FacebookStrategy({
-//   clientID: 443385299449892,
-//   clientSecret: '44d27f6f7874696906668ef248372dbd',
-//   callbackURL: "http://localhost:3000/users/login/facebook/return"
-// },
-// function(accessToken, refreshToken, profile, done) {
-// User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-// return done(err, user);
-// });
-// }
-// ));
-//
-//
   passport.serializeUser(function(user, done) {
     done(null, user.id);
   });
