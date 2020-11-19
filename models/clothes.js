@@ -20,6 +20,7 @@ const ClothesSchema = mongoose.Schema({
   },
   measurement:{
     type: Array,
+    //type: Mixed,
     required: true
   },
   description:{

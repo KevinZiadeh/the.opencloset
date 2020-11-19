@@ -93,8 +93,8 @@ router.post('/add', ensureAuthenticated, [
   body('title').not().isEmpty().withMessage('Title is required'),
   body('measurement').not().isEmpty().withMessage('Size is required'),
   body('price').not().isEmpty().withMessage('Price is required').isDecimal().withMessage('Price  must be a number'),
-  body('description').isLength({max: 70}).withMessage("Description shouldn't be bigger than 70 characters").custom(value=>{
-    wordCheck = value.split(' ')
+  body('description').custom(value=>{
+    wordCheck = value.split(/\s|\n/)
     wordCheck.forEach((word)=>{
       if (word.length > 22){
         throw new Error('One word cannot be bigger than 22 characters')
@@ -119,7 +119,10 @@ router.post('/add', ensureAuthenticated, [
      measurement: req.body.measurement,
      description: req.body.description,
      color: req.body.color,
-     seller_id: req.user._id
+     seller_id: req.user._id,
+     sex: req.body.sex,
+     brand: req.body.brand,
+     attribute: req.body.attribute
    })
      newClothes.save()
      req.flash('success', 'You have successfully added an item')
@@ -141,7 +144,8 @@ router.get('/edit/:id', ensureAuthenticated, (req, res)=>{
     res.render('./seller/edit_clothes', {
       title: 'Edit item',
       seller: req.user,
-      item: item
+      item: item,
+      user: req.user
     })
   })
 })
@@ -150,8 +154,8 @@ router.post('/edit/:id', ensureAuthenticated, [
   body('title').not().isEmpty().withMessage('Title is required'),
   body('measurement').not().isEmpty().withMessage('Size is required'),
   body('price').not().isEmpty().withMessage('Price is required').isDecimal().withMessage('Price  must be a number'),
-  body('description').isLength({max: 70}).withMessage("Description shouldn't be bigger than 70 characters").custom(value=>{
-    wordCheck = value.split(' ')
+  body('description').custom(value=>{
+    wordCheck = value.split(/\s|\n/)
     wordCheck.forEach((word)=>{
       if (word.length > 22){
         throw new Error('One word cannot be bigger than 22 characters')
@@ -170,7 +174,7 @@ router.post('/edit/:id', ensureAuthenticated, [
        title: 'Add clothes',
        seller: req.user,
        item: item,
-       user: user
+       user: req.user
      });
    }else{
      var updatedItem= {

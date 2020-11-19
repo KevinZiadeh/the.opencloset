@@ -98,6 +98,8 @@
   color: rgb(50, 50, 50);
   font-size: 15px;
   margin: auto;
+  max-height: 70px;
+  overflow: hidden;
   text-align: left;
 }
 
